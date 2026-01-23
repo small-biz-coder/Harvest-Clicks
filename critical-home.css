@@ -1,0 +1,478 @@
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('roboto-v49-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('roboto-v49-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+:root {
+    --primary: #4464AD;
+    --primarylight: #92C0DD;
+    --secondary: #E7D09F;
+    --third: #B49A67;
+    --font: #000000;
+    --h1Font: calc(2rem + 2vw);
+    --h2Font: calc(1rem + 1vw);
+    --h3Font: calc(0.9rem + 0.8vw);
+    --pFont: calc(1rem + 0.5vw);
+    --pFont2: calc(0.8rem + 0.5vw);
+    --border: 9.5px;
+    --heroHeight: 110vh;
+    --heroMainHeight: 100vh;
+}
+* {
+    box-sizing: border-box;
+}
+* {
+    /*border: solid red 1px !important;*/
+}
+h1 {
+    font-size: var(--h1Font);
+}
+h2 {
+    font-size: var(--h2Font);
+}
+h3 {
+    font-size: var(--h3Font);
+}
+p {
+    font-size: var(--pFont);
+}
+body {
+    font-family: roboto;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    position: relative;
+}
+.button {
+    border-radius: 50px;
+    box-shadow: 5px 5px 7px var(--primarylight);
+    background-color: var(--secondary);
+    font-weight: 600;
+    padding: 5px 20px;
+    width: auto;
+    color: var(--font);
+    font-size: 1.5rem;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+}
+.button:hover {
+    background-color: var(--primary);
+    transition: background-color .4s;
+    cursor: pointer;
+}
+.header-block {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    margin: 0 auto;
+    width: 100vw;
+    max-width: 1500px;
+}
+.header-block h1 {
+    text-align: center;
+    margin: 0;
+}
+.header-block strong {
+    color: var(--primary);
+    font-size: var(--h3Font);
+    text-transform: uppercase;
+}
+
+
+ /*     ---------------------------------------
+        ---------------------------------------
+        ---------------------------------------
+        ----------MOBILE iPhone/ONLY-----------
+        ---------------------------------------
+        ---------------------------------------
+        ---------------------------------------  */
+@media only screen and (min-width: 0rem) {
+#navigation {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+#navigation .container {
+    width: 97vw;
+    max-width: 1455px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    box-shadow: 0 0 10px var(--primarylight);
+    border-radius: 13px;
+    background-color: white;
+    padding: 10px 0;
+}
+.menu {
+    display: none;
+}
+.mobile-menu .menu {
+    display: grid;
+    grid-column-start: span 2;
+    background-color: var(--primarylight);
+    width: 95vw;
+    border-radius: 13px;
+    text-align: center;
+    position: absolute;
+    top: clamp(102px, 13.9vw, 120px);
+    margin: 0 2.5vw;
+}
+.nav-menu {
+    padding: 20px 0 0 0;
+}
+.nav-menu li {
+    padding: 10px 0; 
+}   
+.box:hover {
+    cursor: pointer;
+}
+#navigation .logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 7px var(--primarylight);
+}
+.container .logo {
+    width: clamp(80px, 11.3vw, 100px);
+    margin-left: -5vw;
+}
+.menu .dropdown-group {
+    list-style: none;
+    height: 53px;
+    padding: 0;
+}
+.open .menu .dropdown-group {
+    height: auto;
+}
+.menu .dropdown-group button {
+    background-color: inherit;
+    border: none;
+    width: 95vw;
+    font-family: inherit;
+    font-size: 1.7rem;
+    line-height: inherit;
+    padding: 10px 0;
+    color: #000;
+}
+.dropdown {
+    display: none;
+}
+.open .dropdown {
+    display: inherit;
+    border-radius: 13px;
+    list-style: none;
+    padding: 0;
+  }
+.open .dropdown a {
+    color: var(--primary);
+}
+#navigation .drop-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+}
+#navigation .caret {
+    width: 1rem;
+    transition: 0.4s;
+}
+#navigation .open .caret {
+    transform: rotate(180deg);
+    transition: 0.4s;
+}
+.menu .drop-text:hover {
+     cursor: pointer;
+}
+.menu .text {
+    list-style: none;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.menu a {
+    text-decoration: none;
+    color: var(--font);
+}
+.text-cta, .contact {
+    list-style: none;
+    margin-top: 9px;
+}
+.menu .contact {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.box {
+    display: inline-block;
+    width: clamp(50px, 5vw, 60px);
+    height: clamp(50px, 5vw, 60px);
+    background-color: var(--primary);
+    position: relative;
+    border-radius: 10px;
+    margin-right: -5vw;
+}
+.box .line {
+    background-color: #fff;
+    width: 75%;
+    height: 11%;
+    border-radius: 5px;
+    margin: 23% 0 0 12.5%;
+    position: absolute;
+}
+.box .line2 {
+    position: absolute;
+    margin: 44.5% 0 0 12.5%;
+}
+
+.box .line3 {
+    position: absolute;
+    margin: 65% 0 0 12.5%;
+}
+.mobile-menu .line1 {
+    top: 20%;
+    transform: rotate(45deg);
+    transition: transform .6s;
+}
+.mobile-menu .line2 {
+    display: none;
+}
+.mobile-menu .line3 {
+    top: -20%;
+    transform: rotate(-45deg);
+    transition: transform .6s;
+}
+ /*     ---------------------------------------
+        ---------------------------------------
+        ----------Home Page iPhone/ONLY--------
+        ---------------------------------------
+        --------------------------------------- */
+#hero {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+#hero:before {
+    content: "";
+    position: absolute;
+    background-color: rgba(146, 192, 221, 0.4);
+    z-index: -1;
+    width: 100vw;
+    max-width: 1500px;
+    top: 15px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 3px;
+}
+#hero .header-block {
+    margin-top: 30px;
+}
+.header-block h1 {
+    font-size: calc(2rem + 1vw);
+}
+#hero p {
+    padding: 20px;
+    margin-top: 0;
+}
+#hero picture {
+    width: 95vw;
+    height: auto;
+}
+#hero img {
+    width: 100%;
+    height: auto;
+    max-width: 1500px;
+    position: relative;
+    margin-top: -15px;
+    z-index: -2;
+}
+#hero .button {
+    position: absolute;
+    top: 600px;
+    left: clamp(30px, 9vw, 65px);
+    font-size: 1.1rem;
+    box-shadow: 5px 5px 7px rgba(146, 192, 221, 0.4);
+}
+/*     ---------------------------------------
+       ---------------------------------------
+       -----Top-Location pages iPhone/ONLY----
+       ---------------------------------------
+       --------------------------------------- */
+
+
+
+}
+ /*     ---------------------------------------
+        ---------------------------------------
+        ---------------------------------------
+        --------MOBILE iPAD/only (772px)-------
+        ---------------------------------------
+        ---------------------------------------
+        ---------------------------------------  */
+@media only screen and (min-width: 48.3rem) {
+#navigation {
+    margin-top: 20px;
+}
+#hero {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: var(--heroMainHeight);
+}
+#hero:before {
+    top: 22px;
+    left: -3px;
+    width: 100vw;
+    height: var(--heroMainHeight);
+}
+@media only screen and (min-width: 1100px) {
+#hero .header-block {
+    margin: 45px;
+}
+}
+#hero .header-block strong {
+    color: #000;
+}
+#hero p {
+    width: 45vw;
+    max-width: 600px;
+    margin: 30px 0 0 5vw;
+}
+#hero picture {
+    max-width: 1500px;
+}
+#hero img {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: -3;
+}
+#hero .button {
+    position: inherit;
+    top: -5px;
+    left: 15vw;
+    font-size: 1.5rem;
+}
+
+
+}
+
+ /*     ---------------------------------------
+        ---------------------------------------
+        ---------------------------------------
+        --------LAPTOP-DESKTOP (1024px)--------
+        ---------------------------------------
+        ---------------------------------------
+        ---------------------------------------  */
+@media only screen and (min-width: 64rem) {
+#navigation .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#navigation .menu {
+    display: inline;
+}
+#navigation .logo {
+    width: 100px;
+    margin: 0 0 0 7vw;
+}
+#navigation .nav-menu {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    column-gap: 30px;
+    padding-top: 0;
+}
+#navigation .nav-menu li {
+    padding: 0;
+    margin-right: 0;
+}
+#navigation .mobile-nav {
+    display: none;
+}
+#navigation .dropdown {
+    display: none;
+}
+.menu .dropdown-group {
+    height: auto;
+}
+#navigation .open .dropdown-group {
+    display: flex;
+    flex-direction: column;
+}
+.menu .dropdown-group button {
+    width: auto;
+}
+#navigation .open .dropdown {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    position: absolute;
+    top: 83px;
+    margin-left: -60px;
+    background-color: var(--primarylight);
+    padding: 0 20px 20px 20px;
+    border-radius: 0 0 20px 20px;
+}
+#navigation .open .dropdown a {
+    color: inherit;
+}
+#navigation .open .dropdown span {
+    width: calc(100% + 40px);
+    height: 5px;
+    background-color: var(--primary);
+    border-radius: 5px;
+    margin: 0 0 10px -20px;
+}
+#navigation ul .text-cta {
+    margin: 0 10vw 0 0;
+}
+ /*     ---------------------------------------
+        ---------------------------------------
+        -------HOME Pages LAPTOP-DESKTOP-------
+        ---------------------------------------
+        --------------------------------------- */
+#hero p {
+    width: 40vw;
+}
+
+}
+/*     ---------------------------------------
+       ---------------------------------------
+       ---------------------------------------
+       ---------BIG DESKTOP (1300px)----------
+       ---------------------------------------
+       ---------------------------------------
+       ---------------------------------------  */
+@media only screen and (min-width: 81.25rem) {
+#navigation .logo {
+    margin: 0 0 0 15vw;
+}
+#navigation ul .text-cta {
+    margin: 0 15vw 0 0;
+}
+}
