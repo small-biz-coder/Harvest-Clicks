@@ -1,6 +1,5 @@
 <?php 
 
-// bootstrap.php or at top of your script
 
 function loadEnv($path) {
     if (!file_exists($path)) {
@@ -21,7 +20,7 @@ function loadEnv($path) {
     }
 }
 
-loadEnv(__DIR__ . '/.env');
+loadEnv(__DIR__ . '/../.env');
 
 // Now use getenv() or $_ENV
 $apiKey = getenv('API_KEY');
@@ -30,7 +29,7 @@ $apiKey = getenv('API_KEY');
 if (isset($_POST['submit'])) {
     // Get the reCAPTCHA token from the form
     $recaptchaToken = $_POST['g-recaptcha-response'];
-    $secretKey = getenv();
+    $secretKey = getenv('RECAPTCHA_SECRET_KEY');
     
     // Verify the reCAPTCHA token
     $verifyURL = 'https://www.google.com/recaptcha/api/siteverify';
