@@ -1024,6 +1024,15 @@ body {
 #contact-info .e-mail span {
     font-size: calc(0.7rem + 0.33vw);
 }
+#thank-you .mail-response {
+    column-gap: 7px;
+}
+#thank-you .mail-response span {
+    font-size: var(--pFont);
+}
+#thank-you .mail-response img {
+    height: var(--pFont);
+}
 /*     ---------------------------------------
        ---------------------------------------
        --------Top-Location pages iPad--------
@@ -1110,9 +1119,6 @@ body {
     margin: 80px auto;
 }
 #thank-you p {
-    font-size: var(--pFont);
-}
-#thank-you .mail-response span {
     font-size: var(--pFont);
 }
 #thank-you .button {
