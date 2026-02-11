@@ -8,9 +8,11 @@ SEO technically solid
 Responsive design for every screen size
 Optimized images for great load speed
 Easy Navigation
+Easy form submission, with recaptcha to detect spam
 
 
 ## Tech Stack
 - HTML
 - CSS
 - JavaScript
+- Php form sender
