@@ -139,9 +139,6 @@ body {
 }
 .nav-menu li {
     padding: 10px 0; 
-}   
-.box:hover {
-    cursor: pointer;
 }
 #navigation .logo img {
     width: 100%;
@@ -225,40 +222,43 @@ body {
     position: relative;
     border-radius: 10px;
     margin-right: -5vw;
+    cursor: pointer;
 }
 .box .line {
     background-color: #fff;
     width: 75%;
     height: 11%;
     border-radius: 5px;
-    margin: 23% 0 0 12.5%;
+    left: 12.5%;
     position: absolute;
+}
+.box .line1 {
+    position: absolute;
+    top: 23%;
 }
 .box .line2 {
     position: absolute;
-    margin: 44.5% 0 0 12.5%;
+    top: 44.5%;
 }
-
 .box .line3 {
     position: absolute;
-    margin: 65% 0 0 12.5%;
+    top: 65%;
 }
 .mobile-menu .line1 {
-    top: 20%;
-    transform: rotate(45deg);
+    /*border: solid 1px green;*/
+    top: 45.5%;
+    transform: rotate(50deg);
     transition: transform .6s;
 }
 .mobile-menu .line2 {
     display: none;
 }
 .mobile-menu .line3 {
-    top: -20%;
-    transform: rotate(-45deg);
+    /*border: solid 1px red;*/
+    top: 45.5%;
+    transform: rotate(-50deg);
     transition: transform .6s;
 }
-
-
-
 
 .interior {
     margin-top: 50px;
